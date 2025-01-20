@@ -1,12 +1,18 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "./state/store";
-import { increment } from "./state/counter/couterSlice";
+import ProductPage from "./pages/ProductPage";
+import Navbar from "./components/Layout/Navbar";
+import Cart from "./pages/Cart";
 export default function App() {
-  const counter=  useSelector((state:RootState)=>state.counter.value)
-  const dispatch=useDispatch( )
-
-  return <div>adada{counter}
+  return (
+    <>
+      <Navbar />
+      <div className="mt-20">
+        <ProductPage />
+        <Cart/>
+      </div>
+      {/* adada{counter}
   <button onClick={()=>dispatch(increment())}>increment</button>
-  </div>;
+  <button onClick={()=>dispatch(decrement())}>decrement</button> */}
+  <p className="text-center h-36 bg-slate-200">Footer</p>
+    </>
+  );
 }
